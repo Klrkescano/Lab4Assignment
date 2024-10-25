@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import {Button, SafeAreaView, StyleSheet, TextInput, View} from 'react-native';
 
 export default function ToDoForm({addTask}) {
-  const [tasktText, settasktText] = useState('');
+  const [tasktText, setTasktText] = useState('');
 
   const handleAddTask = () => {
     if (tasktText.trim()) {
       addTask(tasktText);
-      settasktText('');
+      setTasktText('');
     }
   };
 
@@ -17,7 +17,7 @@ export default function ToDoForm({addTask}) {
         <TextInput
           style={styles.input}
           placeholder="Add a new Task..."
-          onChangeText={text => settasktText(text)}
+          onChangeText={text => setTasktText(text)}
           value={tasktText}
         />
         <Button title="Add" onPress={handleAddTask} />
